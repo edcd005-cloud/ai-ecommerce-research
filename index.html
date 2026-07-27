@@ -3,317 +3,256 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI电商教培 · 短视频投流深度调研</title>
+<title>AI电商教培 · 短视频投流调研报告</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap');
-  :root{--bg:#f5f5f7;--w:#fff;--b:#1d1d1f;--g:#86868b;--g2:#6e6e73;--g3:#d2d2d7;--g4:#f0f0f2;--o:#ff6900;--o2:#ff8c38;--bl:#0071e3;--gn:#30d158;--r:#ff3b30;--p:#bf5af2;--pk:#ff375f;--rad:20px;--sh:0 2px 16px rgba(0,0,0,.06);--sh2:0 8px 32px rgba(0,0,0,.1)}
-  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-  body{font-family:'Noto Sans SC',-apple-system,sans-serif;background:var(--bg);color:var(--b);line-height:1.85;-webkit-font-smoothing:antialiased}
-  .w{max-width:1200px;margin:0 auto;padding:0 28px}
-  nav{position:sticky;top:0;z-index:100;background:rgba(245,245,247,.88);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--g3)}
-  nav .w{display:flex;align-items:center;justify-content:space-between;height:56px}
-  .logo{font-size:20px;font-weight:800}.logo span{color:var(--o)}
-  .nav-l{display:flex;gap:24px}.nav-l a{font-size:15px;color:var(--g2);text-decoration:none;font-weight:500;transition:.2s}.nav-l a:hover,.nav-l a.act{color:var(--o)}
-  .hero{padding:100px 0 80px;text-align:center;background:linear-gradient(180deg,#fff,var(--bg))}
-  .hero-tag{display:inline-block;padding:6px 20px;border-radius:100px;background:rgba(255,105,0,.08);color:var(--o);font-size:15px;font-weight:600;margin-bottom:24px}
-  .hero h1{font-size:clamp(2.6rem,5.5vw,3.8rem);font-weight:900;line-height:1.15;letter-spacing:-.02em;margin-bottom:20px}
-  .hero>p{font-size:20px;color:var(--g);max-width:620px;margin:0 auto 56px;line-height:1.8}
-  .hgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:900px;margin:0 auto}
-  .hc{background:var(--w);border-radius:var(--rad);padding:32px 16px;box-shadow:var(--sh);transition:.3s}.hc:hover{transform:translateY(-6px);box-shadow:var(--sh2)}
-  .hc .n{font-size:38px;font-weight:900;background:linear-gradient(135deg,var(--o),var(--o2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2}
-  .hc .l{font-size:15px;color:var(--g);margin-top:6px}
-  .s{padding:80px 0}
-  .sh{text-align:center;margin-bottom:48px}
-  .stag{display:inline-block;padding:5px 16px;border-radius:100px;font-size:13px;font-weight:600;margin-bottom:14px}
-  .to{background:rgba(255,105,0,.08);color:var(--o)}.tb{background:rgba(0,113,227,.08);color:var(--bl)}.tg{background:rgba(48,209,88,.08);color:var(--gn)}.tp{background:rgba(191,90,242,.08);color:var(--p)}.tr{background:rgba(255,59,48,.08);color:var(--r)}
-  .sh h2{font-size:clamp(2rem,3.5vw,2.8rem);font-weight:900;letter-spacing:-.01em;margin-bottom:10px}
-  .sh p{font-size:18px;color:var(--g);max-width:620px;margin:0 auto}
-  .cd{background:var(--w);border-radius:var(--rad);padding:32px;box-shadow:var(--sh);transition:.3s}.cd:hover{transform:translateY(-3px);box-shadow:var(--sh2)}
-  .cdt{font-size:20px;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:10px}
-  .cdt .d{width:10px;height:10px;border-radius:50%;flex-shrink:0}
-  .g2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .tb{width:100%;border-collapse:separate;border-spacing:0}
-  .tb th{text-align:left;padding:14px 18px;font-size:15px;font-weight:600;color:var(--g);border-bottom:2px solid var(--g3);background:var(--g4)}
-  .tb th:first-child{border-radius:12px 0 0 0}.tb th:last-child{border-radius:0 12px 0 0}
-  .tb td{padding:16px 18px;font-size:16px;border-bottom:1px solid var(--g4)}
-  .tb tr:last-child td{border-bottom:none}.tb tbody tr:hover{background:rgba(255,105,0,.03)}
-  .hl{font-weight:700;color:var(--o)}.gn{font-weight:700;color:var(--gn)}.rd{font-weight:700;color:var(--r)}
-  .br{display:flex;align-items:center;gap:14px;margin-bottom:14px}
-  .bl{width:100px;text-align:right;font-size:16px;color:var(--g2);font-weight:600;flex-shrink:0}
-  .bt{flex:1;height:36px;background:var(--g4);border-radius:10px;overflow:hidden}
-  .bf{height:100%;border-radius:10px;display:flex;align-items:center;padding:0 14px;font-size:14px;font-weight:700;color:#fff;min-width:fit-content}
-  .bv{width:80px;font-size:16px;font-weight:700;color:var(--b);flex-shrink:0}
-  .plat{background:var(--w);border-radius:var(--rad);padding:28px;box-shadow:var(--sh);transition:.3s}.plat:hover{transform:translateY(-4px);box-shadow:var(--sh2)}
-  .ph{display:flex;align-items:center;gap:14px;margin-bottom:16px}
-  .pi{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
-  .pn{font-size:20px;font-weight:800}.pd{font-size:13px;color:var(--g)}
-  .pb{font-size:16px;color:var(--g2);line-height:2.1;margin-bottom:16px}.pb b{color:var(--b)}
-  .pm{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding-top:16px;border-top:1px solid var(--g4)}
-  .pmc{text-align:center}.pmc .v{font-size:20px;font-weight:800}.pmc .l{font-size:12px;color:var(--g)}
-  .cr{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--g4)}.cr:last-child{border-bottom:none}
-  .cl{width:130px;font-size:16px;font-weight:600;color:var(--b);flex-shrink:0}
-  .cb{flex:1;display:flex;gap:10px;align-items:center}
-  .co{height:30px;border-radius:8px;background:var(--g3);display:flex;align-items:center;padding:0 12px;font-size:13px;font-weight:600;color:var(--g2)}
-  .cn{height:30px;border-radius:8px;background:linear-gradient(90deg,var(--o),var(--o2));display:flex;align-items:center;padding:0 12px;font-size:13px;font-weight:700;color:#fff}
-  .cs{width:80px;text-align:right;font-size:16px;font-weight:800;color:var(--gn);flex-shrink:0}
-  .ins{background:linear-gradient(135deg,#fff5eb,#fff);border:1px solid rgba(255,105,0,.15);border-radius:var(--rad);padding:28px 32px;margin-top:24px}
-  .inst{font-size:18px;font-weight:700;color:var(--o);margin-bottom:10px}
-  .ins p{font-size:16px;color:var(--g2);line-height:2.1}
-  .st{padding:20px 0;border-bottom:1px solid var(--g4)}.st:last-child{border-bottom:none}
-  .sth{display:flex;align-items:center;gap:14px;margin-bottom:10px}
-  .stn{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:var(--o);background:rgba(255,105,0,.08);flex-shrink:0}
-  .stt{font-size:18px;font-weight:700}
-  .std{font-size:15px;color:var(--g);margin-left:58px;margin-bottom:8px}
-  .stb{font-size:16px;color:var(--g2);line-height:2.1;margin-left:58px}
-  .adv{background:var(--w);border-radius:var(--rad);padding:28px 32px;box-shadow:var(--sh);margin-bottom:16px;transition:.3s}.adv:hover{box-shadow:var(--sh2)}
-  .adh{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-  .adi{font-size:28px}.adt{font-size:20px;font-weight:800}
-  .adb{font-size:16px;color:var(--g2);line-height:2.1}.adb b{color:var(--b)}
-  .step{display:flex;gap:0;margin:32px 0}
-  .step-card{flex:1;background:var(--w);border-radius:var(--rad);padding:28px 20px;box-shadow:var(--sh);text-align:center;position:relative;transition:.3s}
-  .step-card:hover{transform:translateY(-4px);box-shadow:var(--sh2)}
-  .step-card+.step-card{margin-left:16px}
-  .step-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
-  .step-card:nth-child(1)::before{background:linear-gradient(90deg,var(--r),var(--o))}
-  .step-card:nth-child(2)::before{background:linear-gradient(90deg,var(--o),var(--o2))}
-  .step-card:nth-child(3)::before{background:linear-gradient(90deg,var(--bl),var(--o))}
-  .step-card:nth-child(4)::before{background:linear-gradient(90deg,var(--gn),var(--bl))}
-  .step-card:nth-child(5)::before{background:linear-gradient(90deg,var(--p),var(--pk))}
-  .sn{width:36px;height:36px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:#fff;margin-bottom:12px}
-  .step-card:nth-child(1) .sn{background:linear-gradient(135deg,var(--r),var(--o))}
-  .step-card:nth-child(2) .sn{background:linear-gradient(135deg,var(--o),var(--o2))}
-  .step-card:nth-child(3) .sn{background:linear-gradient(135deg,var(--bl),var(--o))}
-  .step-card:nth-child(4) .sn{background:linear-gradient(135deg,var(--gn),var(--bl))}
-  .step-card:nth-child(5) .sn{background:linear-gradient(135deg,var(--p),var(--pk))}
-  .si{font-size:32px;margin-bottom:10px}
-  .stitle{font-size:17px;font-weight:700;margin-bottom:8px}
-  .sdesc{font-size:14px;color:var(--g2);line-height:1.8}
-  .stime{display:inline-block;padding:3px 12px;border-radius:100px;font-size:12px;font-weight:600;margin-top:10px;background:var(--g4);color:var(--o)}
-  footer{text-align:center;padding:56px 28px;border-top:1px solid var(--g3);color:var(--g);font-size:14px}
-  footer .br2{font-size:20px;font-weight:800;color:var(--b);margin-bottom:6px}
-  .rv{opacity:0;transform:translateY(24px);transition:.6s}.rv.vis{opacity:1;transform:translateY(0)}
-  @media(max-width:960px){.g2,.g3{grid-template-columns:1fr}.hgrid{grid-template-columns:repeat(2,1fr)}.nav-l{display:none}.step{flex-direction:column}.step-card+.step-card{margin-left:0;margin-top:16px}}
-  @media(max-width:560px){.hgrid{grid-template-columns:1fr 1fr}.w{padding:0 16px}.s{padding:48px 0}}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap');
+:root{--bg:#f5f5f7;--w:#fff;--b:#1d1d1f;--g:#86868b;--g2:#6e6e73;--g3:#d2d2d7;--g4:#f0f0f2;--o:#ff6900;--o2:#ff8c38;--bl:#0071e3;--gn:#30d158;--r:#ff3b30;--p:#bf5af2;--pk:#ff375f;--rad:20px;--sh:0 2px 16px rgba(0,0,0,.06);--sh2:0 8px 32px rgba(0,0,0,.1)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Noto Sans SC',-apple-system,sans-serif;background:var(--bg);color:var(--b);line-height:1.9;-webkit-font-smoothing:antialiased}
+.w{max-width:1200px;margin:0 auto;padding:0 28px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(245,245,247,.88);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--g3)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{font-size:20px;font-weight:800}.logo span{color:var(--o)}
+.nl{display:flex;gap:24px}.nl a{font-size:15px;color:var(--g2);text-decoration:none;font-weight:500;transition:.2s}.nl a:hover,.nl a.act{color:var(--o)}
+
+/* HERO */
+.hero{padding:100px 0 80px;text-align:center;background:linear-gradient(180deg,#fff,var(--bg))}
+.hero-tag{display:inline-block;padding:6px 20px;border-radius:100px;background:rgba(255,105,0,.08);color:var(--o);font-size:15px;font-weight:600;margin-bottom:24px}
+.hero h1{font-size:clamp(2.6rem,5.5vw,3.8rem);font-weight:900;line-height:1.15;letter-spacing:-.02em;margin-bottom:20px}
+.hero>p{font-size:20px;color:var(--g);max-width:620px;margin:0 auto 56px;line-height:1.8}
+.hg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:900px;margin:0 auto}
+.hc{background:var(--w);border-radius:var(--rad);padding:32px 16px;box-shadow:var(--sh);transition:.3s}.hc:hover{transform:translateY(-6px);box-shadow:var(--sh2)}
+.hc .n{font-size:38px;font-weight:900;background:linear-gradient(135deg,var(--o),var(--o2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2}
+.hc .l{font-size:15px;color:var(--g);margin-top:6px}
+
+/* SECTION */
+.s{padding:80px 0}
+.sh{text-align:center;margin-bottom:48px}
+.stag{display:inline-block;padding:5px 16px;border-radius:100px;font-size:13px;font-weight:600;margin-bottom:14px}
+.to{background:rgba(255,105,0,.08);color:var(--o)}.tb{background:rgba(0,113,227,.08);color:var(--bl)}.tg{background:rgba(48,209,88,.08);color:var(--gn)}.tp{background:rgba(191,90,242,.08);color:var(--p)}
+.sh h2{font-size:clamp(2rem,3.5vw,2.8rem);font-weight:900;letter-spacing:-.01em;margin-bottom:10px}
+.sh p{font-size:18px;color:var(--g);max-width:620px;margin:0 auto}
+
+/* CARD */
+.cd{background:var(--w);border-radius:var(--rad);padding:32px;box-shadow:var(--sh);transition:.3s}.cd:hover{transform:translateY(-3px);box-shadow:var(--sh2)}
+.cdt{font-size:20px;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.cdt .d{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+
+/* GRID */
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+/* TABLE */
+.tb{width:100%;border-collapse:separate;border-spacing:0}
+.tb th{text-align:left;padding:14px 18px;font-size:15px;font-weight:600;color:var(--g);border-bottom:2px solid var(--g3);background:var(--g4)}
+.tb th:first-child{border-radius:12px 0 0 0}.tb th:last-child{border-radius:0 12px 0 0}
+.tb td{padding:16px 18px;font-size:16px;border-bottom:1px solid var(--g4)}
+.tb tr:last-child td{border-bottom:none}
+.tb tbody tr:hover{background:rgba(255,105,0,.03)}
+.hl{font-weight:700;color:var(--o)}.gn{font-weight:700;color:var(--gn)}
+
+/* BAR */
+.br{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.bl{width:100px;text-align:right;font-size:16px;color:var(--g2);font-weight:600;flex-shrink:0}
+.bt{flex:1;height:36px;background:var(--g4);border-radius:10px;overflow:hidden}
+.bf{height:100%;border-radius:10px;display:flex;align-items:center;padding:0 14px;font-size:14px;font-weight:700;color:#fff;min-width:fit-content}
+.bv{width:80px;font-size:16px;font-weight:700;color:var(--b);flex-shrink:0}
+
+/* PLATFORM */
+.plat{background:var(--w);border-radius:var(--rad);padding:28px;box-shadow:var(--sh);transition:.3s}.plat:hover{transform:translateY(-4px);box-shadow:var(--sh2)}
+.ph{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.pi{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
+.pn{font-size:20px;font-weight:800}.pd{font-size:13px;color:var(--g)}
+.pb{font-size:16px;color:var(--g2);line-height:2.1;margin-bottom:16px}.pb b{color:var(--b)}
+.pm{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding-top:16px;border-top:1px solid var(--g4)}
+.pmc{text-align:center}.pmc .v{font-size:20px;font-weight:800}.pmc .l{font-size:12px;color:var(--g)}
+
+/* STEP */
+.step{display:flex;gap:0;margin:32px 0}
+.sc{flex:1;background:var(--w);border-radius:var(--rad);padding:28px 20px;box-shadow:var(--sh);text-align:center;position:relative;transition:.3s}
+.sc:hover{transform:translateY(-4px);box-shadow:var(--sh2)}
+.sc+.sc{margin-left:16px}
+.sc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.sc:nth-child(1)::before{background:linear-gradient(90deg,#ef4444,var(--o))}
+.sc:nth-child(2)::before{background:linear-gradient(90deg,var(--o),var(--o2))}
+.sc:nth-child(3)::before{background:linear-gradient(90deg,var(--bl),var(--o))}
+.sc:nth-child(4)::before{background:linear-gradient(90deg,var(--gn),var(--bl))}
+.sc:nth-child(5)::before{background:linear-gradient(90deg,var(--p),var(--pk))}
+.sn{width:36px;height:36px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:#fff;margin-bottom:12px}
+.sc:nth-child(1) .sn{background:linear-gradient(135deg,#ef4444,var(--o))}
+.sc:nth-child(2) .sn{background:linear-gradient(135deg,var(--o),var(--o2))}
+.sc:nth-child(3) .sn{background:linear-gradient(135deg,var(--bl),var(--o))}
+.sc:nth-child(4) .sn{background:linear-gradient(135deg,var(--gn),var(--bl))}
+.sc:nth-child(5) .sn{background:linear-gradient(135deg,var(--p),var(--pk))}
+.si{font-size:32px;margin-bottom:10px}
+.stitle{font-size:17px;font-weight:700;margin-bottom:8px}
+.sdesc{font-size:14px;color:var(--g2);line-height:1.8}
+.stime{display:inline-block;padding:3px 12px;border-radius:100px;font-size:12px;font-weight:600;margin-top:10px;background:var(--g4);color:var(--o)}
+
+/* COST COMPARE */
+.cr{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--g4)}.cr:last-child{border-bottom:none}
+.cl{width:130px;font-size:16px;font-weight:600;color:var(--b);flex-shrink:0}
+.cb{flex:1;display:flex;gap:10px;align-items:center}
+.co{height:30px;border-radius:8px;background:var(--g3);display:flex;align-items:center;padding:0 12px;font-size:13px;font-weight:600;color:var(--g2)}
+.cn{height:30px;border-radius:8px;background:linear-gradient(90deg,var(--o),var(--o2));display:flex;align-items:center;padding:0 12px;font-size:13px;font-weight:700;color:#fff}
+.cs{width:80px;text-align:right;font-size:16px;font-weight:800;color:var(--gn);flex-shrink:0}
+
+/* INSIGHT */
+.ins{background:linear-gradient(135deg,#fff5eb,#fff);border:1px solid rgba(255,105,0,.15);border-radius:var(--rad);padding:28px 32px;margin-top:24px}
+.inst{font-size:18px;font-weight:700;color:var(--o);margin-bottom:10px}
+.ins p{font-size:16px;color:var(--g2);line-height:2.1}
+
+/* ADVICE */
+.adv{background:var(--w);border-radius:var(--rad);padding:28px 32px;box-shadow:var(--sh);margin-bottom:16px;transition:.3s}.adv:hover{box-shadow:var(--sh2)}
+.adh{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.adi{font-size:28px}.adt{font-size:20px;font-weight:800}
+.adb{font-size:16px;color:var(--g2);line-height:2.1}.adb b{color:var(--b)}
+
+footer{text-align:center;padding:56px 28px;border-top:1px solid var(--g3);color:var(--g);font-size:14px}
+footer .br2{font-size:20px;font-weight:800;color:var(--b);margin-bottom:6px}
+
+/* ANIM */
+.rv{opacity:0;transform:translateY(24px);transition:.6s}.rv.vis{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:960px){.g2,.g3{grid-template-columns:1fr}.hg{grid-template-columns:repeat(2,1fr)}.nl{display:none}.step{flex-direction:column}.sc+.sc{margin-left:0;margin-top:16px}}
+@media(max-width:560px){.hg{grid-template-columns:1fr 1fr}.w{padding:0 16px}.s{padding:48px 0}}
 </style>
 </head>
 <body>
-<nav><div class="w"><div class="logo">AI电商教培 · <span>投流调研</span></div><div class="nav-l"><a href="#s1" class="act">视频结构</a><a href="#s2">受众人群</a><a href="#s3">投流方法</a><a href="#s4">平台数据</a><a href="#s5">运营手法</a><a href="#s6">落地方案</a></div></div></nav>
 
+<!-- NAV -->
+<nav><div class="w">
+<div class="logo">AI电商教培 · <span>投流调研</span></div>
+<div class="nl">
+<a href="#s1" class="act">视频结构</a>
+<a href="#s2">受众人群</a>
+<a href="#s3">视频制作</a>
+<a href="#s4">平台数据</a>
+<a href="#s5">投流策略</a>
+</div>
+</div></nav>
+
+<!-- HERO -->
 <section class="hero"><div class="w">
-<div class="hero-tag">📊 2026年AI电商教培 · 短视频投流深度调研</div>
-<h1>AI电商教育培训<br>短视频投流全链路报告</h1>
-<p>覆盖投流视频内容结构、受众人群画像、投流方法论、六大平台数据基准、运营操作手法，助力精准获客与高效转化</p>
-<div class="hgrid">
+<div class="hero-tag">📊 2026年AI电商教培 · 短视频投流调研报告</div>
+<h1>AI电商教育培训<br>短视频投流数据报告</h1>
+<p>覆盖投流视频内容结构、受众画像、制作方法、六大平台投流数据，为投流工作提供决策依据</p>
+<div class="hg">
 <div class="hc"><div class="n">¥15-25</div><div class="l">教育行业平均CPM</div></div>
 <div class="hc"><div class="n">¥45-80</div><div class="l">AI电商培训线索成本</div></div>
 <div class="hc"><div class="n">1:3.5</div><div class="l">优质素材平均ROI</div></div>
 <div class="hc"><div class="n">42.8%</div><div class="l">AI电商教培年增长率</div></div>
-</div></div></section>
+</div>
+</div></section>
 
-<!-- ===== 1: 投流视频内容结构 ===== -->
+<!-- ===== 1: 视频内容结构 ===== -->
 <section class="s" id="s1"><div class="w">
-<div class="sh rv"><div class="stag to">VIDEO STRUCTURE</div><h2>投流视频内容结构拆解</h2><p>高转化投流视频遵循「五段式」脚本结构，每段精确控制时长与信息密度，前3秒决定成败</p></div>
+<div class="sh rv"><div class="stag to">VIDEO STRUCTURE</div><h2>投流视频内容结构</h2><p>高转化投流视频遵循五段式脚本结构，前3秒决定用户去留</p></div>
 
 <div class="step rv">
-<div class="step-card"><div class="sn">1</div><div class="si">🎯</div><div class="stitle">黄金钩子</div><div class="sdesc">前3秒抓住注意力<br>用数据、反差或痛点<br>制造强烈好奇心<br><b>"一条视频赚了10万"</b></div><div class="stime">0 ~ 3 秒</div></div>
-<div class="step-card"><div class="sn">2</div><div class="si">💥</div><div class="stitle">痛点放大</div><div class="sdesc">具象化电商运营困境<br>引发强烈共鸣<br><b>"流量贵、转化低<br>不会投、不会做"</b></div><div class="stime">3 ~ 8 秒</div></div>
-<div class="step-card"><div class="sn">3</div><div class="si">⚡</div><div class="stitle">AI方案展示</div><div class="sdesc">展示AI工具如何解决<br>用前后对比制造冲击<br><b>"AI帮你10分钟搞定<br>以前需要3天的工作"</b></div><div class="stime">8 ~ 20 秒</div></div>
-<div class="step-card"><div class="sn">4</div><div class="si">🏆</div><div class="stitle">信任背书</div><div class="sdesc">学员真实出单数据<br>平台官方认证背书<br><b>"月销从0到50万<br>3000+学员验证"</b></div><div class="stime">20 ~ 25 秒</div></div>
-<div class="step-card"><div class="sn">5</div><div class="si">🚀</div><div class="stitle">行动指令</div><div class="sdesc">明确引导转化动作<br>限时福利制造紧迫感<br><b>"评论区扣1领取<br>限前100名"</b></div><div class="stime">25 ~ 30 秒</div></div>
+<div class="sc"><div class="sn">1</div><div class="si">🎯</div><div class="stitle">黄金钩子</div><div class="sdesc">前3秒抓注意力<br>数据/反差/痛点<br>"一条视频赚了10万"</div><div class="stime">0 ~ 3 秒</div></div>
+<div class="sc"><div class="sn">2</div><div class="si">💥</div><div class="stitle">痛点放大</div><div class="sdesc">具象化运营困境<br>"流量贵、转化低<br>不会投、不会做"</div><div class="stime">3 ~ 8 秒</div></div>
+<div class="sc"><div class="sn">3</div><div class="si">⚡</div><div class="stitle">AI方案</div><div class="sdesc">展示AI工具解决效果<br>前后对比制造冲击<br>"10分钟搞定3天工作"</div><div class="stime">8 ~ 20 秒</div></div>
+<div class="sc"><div class="sn">4</div><div class="si">🏆</div><div class="stitle">信任背书</div><div class="sdesc">学员真实出单数据<br>平台认证背书<br>"月销0到50万"</div><div class="stime">20 ~ 25 秒</div></div>
+<div class="sc"><div class="sn">5</div><div class="si">🚀</div><div class="stitle">行动指令</div><div class="sdesc">明确转化动作<br>限时福利紧迫感<br>"评论区扣1领取"</div><div class="stime">25 ~ 30 秒</div></div>
 </div>
 
 <div class="g2 rv" style="margin-top:24px">
 <div class="cd">
-<div class="cdt"><span class="d" style="background:var(--o)"></span>四大高转化投流视频类型</div>
+<div class="cdt"><span class="d" style="background:var(--o)"></span>四大高转化视频类型</div>
 <div style="font-size:16px;line-height:2.2">
-<p><b style="color:var(--o)">🎬 AI工具教程型</b> — 完播率 41%</p>
-<p style="color:var(--g2);margin-bottom:12px">演示AI选品/文案/图片生成全流程，展示"10分钟出100条文案"等低门槛效果，适合电商新手入门引导</p>
-<p><b style="color:var(--o)">💰 爆单案例型</b> — 转化率 9.2%</p>
-<p style="color:var(--g2);margin-bottom:12px">展示AI电商真实出单数据，从0到爆款的全过程复盘，数据可视化增强说服力，适合观望人群破冰</p>
-<p><b style="color:var(--o)">🔄 效率对比型</b> — 互动率 2.8倍</p>
-<p style="color:var(--g2);margin-bottom:12px">传统运营 vs AI运营效率对比，时间、成本、效果三维冲击，适合有经验从业者</p>
-<p><b style="color:var(--o)">🗣️ 学员证言型</b> — 分享率 3.5倍</p>
-<p style="color:var(--g2)">真实学员讲述AI电商成果，配合出单截图与收入数据，信任感最强的转化利器</p>
+<p><b style="color:var(--o)">AI工具教程型</b> <span style="color:var(--gn);font-weight:600">完播率 41%</span></p>
+<p style="color:var(--g2);margin-bottom:12px">演示AI选品/文案/图片生成全流程，展示低门槛效果，适合新手入门引导</p>
+<p><b style="color:var(--o)">爆单案例型</b> <span style="color:var(--gn);font-weight:600">转化率 9.2%</span></p>
+<p style="color:var(--g2);margin-bottom:12px">展示AI电商真实出单数据，从0到爆款全过程复盘，数据可视化增强说服力</p>
+<p><b style="color:var(--o)">效率对比型</b> <span style="color:var(--gn);font-weight:600">互动率 2.8倍</span></p>
+<p style="color:var(--g2);margin-bottom:12px">传统运营 vs AI运营效率对比，时间/成本/效果三维冲击</p>
+<p><b style="color:var(--o)">学员证言型</b> <span style="color:var(--gn);font-weight:600">分享率 3.5倍</span></p>
+<p style="color:var(--g2)">真实学员讲述AI电商成果，配合出单截图，信任感最强</p>
 </div>
 </div>
 <div class="cd">
-<div class="cdt"><span class="d" style="background:var(--bl)"></span>投流素材制作要点</div>
+<div class="cdt"><span class="d" style="background:var(--bl)"></span>素材制作核心要点</div>
 <div style="font-size:16px;line-height:2.2">
-<p><b>▸ 前3秒是生死线</b></p>
-<p style="color:var(--g2);margin-bottom:12px">2026年培训类CPM同比上涨47%，但优质素材ROI反升25%。前3秒必须有强钩子，否则用户直接划走</p>
-<p><b>▸ 用AIGC批量产出</b></p>
-<p style="color:var(--g2);margin-bottom:12px">AIGC素材占比已达42%，日均产出20-50条，成本降低90%。用AI生成脚本+图片+视频，效率提升25倍</p>
-<p><b>▸ 每周淘汰末位30%</b></p>
-<p style="color:var(--g2);margin-bottom:12px">素材生命周期越来越短，必须持续迭代。CTR低于1.5%的素材立即淘汰，补充新素材</p>
-<p><b>▸ 多版本A/B测试</b></p>
-<p style="color:var(--g2)">同一脚本制作3-5个不同版本（不同钩子/不同开头/不同BGM），测试最优组合后放量</p>
+<p><b>前3秒是生死线</b></p>
+<p style="color:var(--g2);margin-bottom:12px">2026年培训类CPM同比上涨47%，优质素材ROI反升25%。前3秒无强钩子则用户直接划走</p>
+<p><b>AIGC批量产出</b></p>
+<p style="color:var(--g2);margin-bottom:12px">AIGC素材占比已达42%，日均产出20-50条，成本降低90%，效率提升25倍</p>
+<p><b>每周淘汰末位30%</b></p>
+<p style="color:var(--g2);margin-bottom:12px">素材生命周期缩短，CTR低于1.5%立即淘汰，持续迭代素材池</p>
+<p><b>多版本A/B测试</b></p>
+<p style="color:var(--g2)">同一脚本制作3-5个版本（不同钩子/开头/BGM），测试最优后放量</p>
 </div>
 </div>
-</div></div></section>
+</div>
+</div></section>
 
 <!-- ===== 2: 受众人群 ===== -->
 <section class="s" id="s2"><div class="w">
-<div class="sh rv"><div class="stag tb">AUDIENCE</div><h2>六大核心受众人群画像</h2><p>AI电商教培覆盖全学段与职场，精准分层是高效投流转化的前提</p></div>
+<div class="sh rv"><div class="stag tb">AUDIENCE</div><h2>六大核心受众人群画像</h2><p>精准分层是高效投流转化的前提，不同人群需要差异化的内容与投放策略</p></div>
 
 <div class="g3 rv">
 <div class="cd" style="border-top:3px solid var(--p)">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:28px">🎒</span><div><div style="font-size:18px;font-weight:800">小学生群体</div><div style="font-size:13px;color:var(--p);font-weight:600">6至12岁 · 占比 6%</div></div></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:28px">🎒</span><div><div style="font-size:18px;font-weight:800">小学生群体</div><div style="font-size:13px;color:var(--p);font-weight:600">6-12岁 · 占比 6%</div></div></div>
 <div style="font-size:15px;color:var(--g2);line-height:2">
-<p><b style="color:var(--b)">核心需求：</b>AI电商启蒙，趣味电商模拟游戏，培养商业思维与数字素养</p>
-<p><b style="color:var(--b)">决策者：</b>家长，关注课程趣味性、安全性与教育价值</p>
-<p><b style="color:var(--b)">投流策略：</b>家长群体定向，小红书+抖音家长教育内容</p>
-<p><b style="color:var(--b)">完播率：</b><span style="color:var(--gn);font-weight:700">88%</span>　<b style="color:var(--b)">转化率：</b><span style="color:var(--gn);font-weight:700">19%</span></p>
-</div>
-</div>
+<p><b style="color:var(--b)">需求：</b>AI电商启蒙，趣味电商模拟，培养商业思维</p>
+<p><b style="color:var(--b)">决策者：</b>家长，关注趣味性与教育价值</p>
+<p><b style="color:var(--b)">投流渠道：</b>小红书+抖音家长教育内容</p>
+<p><b style="color:var(--b)">完播率 88%</b> · <b style="color:var(--b)">转化率 19%</b></p>
+</div></div>
 <div class="cd" style="border-top:3px solid var(--bl)">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:28px">📚</span><div><div style="font-size:18px;font-weight:800">初中生群体</div><div style="font-size:13px;color:var(--bl);font-weight:600">12至15岁 · 占比 8%</div></div></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:28px">📚</span><div><div style="font-size:18px;font-weight:800">初中生群体</div><div style="font-size:13px;color:var(--bl);font-weight:600">12-15岁 · 占比 8%</div></div></div>
 <div style="font-size:15px;color:var(--g2);line-height:2">
-<p><b style="color:var(--b)">核心需求：</b>AI辅助学习电商基础知识，模拟开店体验与AI工具入门</p>
-<p><b style="color:var(--b)">决策者：</b>家长与学生共同决策，关注趣味性与实践体验</p>
-<p><b style="color:var(--b)">投流策略：</b>家长+学生双人群定向，B站+抖音教育内容</p>
-<p><b style="color:var(--b)">完播率：</b><span style="color:var(--gn);font-weight:700">80%</span>　<b style="color:var(--b)">转化率：</b><span style="color:var(--gn);font-weight:700">15%</span></p>
-</div>
-</div>
+<p><b style="color:var(--b)">需求：</b>AI辅助学习电商基础，模拟开店与AI工具入门</p>
+<p><b style="color:var(--b)">决策者：</b>家长与学生共同决策</p>
+<p><b style="color:var(--b)">投流渠道：</b>B站+抖音教育内容</p>
+<p><b style="color:var(--b)">完播率 80%</b> · <b style="color:var(--b)">转化率 15%</b></p>
+</div></div>
 <div class="cd" style="border-top:3px solid var(--gn)">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:28px">🎯</span><div><div style="font-size:18px;font-weight:800">高中生群体</div><div style="font-size:13px;color:var(--gn);font-weight:600">15至18岁 · 占比 10%</div></div></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:28px">🎯</span><div><div style="font-size:18px;font-weight:800">高中生群体</div><div style="font-size:13px;color:var(--gn);font-weight:600">15-18岁 · 占比 10%</div></div></div>
 <div style="font-size:15px;color:var(--g2);line-height:2">
-<p><b style="color:var(--b)">核心需求：</b>AI电商创业启蒙与职业探索，学习AI选品、短视频制作基础</p>
-<p><b style="color:var(--b)">决策者：</b>部分自主决策，部分家长参与，升学与职业规划驱动</p>
-<p><b style="color:var(--b)">投流策略：</b>学生兴趣标签+家长教育焦虑，抖音+B站</p>
-<p><b style="color:var(--b)">完播率：</b><span style="color:var(--gn);font-weight:700">76%</span>　<b style="color:var(--b)">转化率：</b><span style="color:var(--gn);font-weight:700">13%</span></p>
-</div>
-</div>
+<p><b style="color:var(--b)">需求：</b>AI电商创业启蒙，职业探索，短视频制作基础</p>
+<p><b style="color:var(--b)">决策者：</b>部分自主+部分家长参与</p>
+<p><b style="color:var(--b)">投流渠道：</b>抖音+B站兴趣标签</p>
+<p><b style="color:var(--b)">完播率 76%</b> · <b style="color:var(--b)">转化率 13%</b></p>
+</div></div>
 <div class="cd" style="border-top:3px solid var(--o)">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:28px">🎓</span><div><div style="font-size:18px;font-weight:800">大学生/应届生</div><div style="font-size:13px;color:var(--o);font-weight:600">18至24岁 · 占比 22%</div></div></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:28px">🎓</span><div><div style="font-size:18px;font-weight:800">大学生/应届生</div><div style="font-size:13px;color:var(--o);font-weight:600">18-24岁 · 占比 22%</div></div></div>
 <div style="font-size:15px;color:var(--g2);line-height:2">
-<p><b style="color:var(--b)">核心需求：</b>AI电商创业实战技能，短视频带货、AI选品、店铺运营</p>
-<p><b style="color:var(--b)">特点：</b>学习意愿强，时间充裕，预算有限，偏好性价比高的课程</p>
-<p><b style="color:var(--b)">投流策略：</b>校园+创业+副业标签，抖音+B站+小红书</p>
-<p><b style="color:var(--b)">完播率：</b><span style="color:var(--gn);font-weight:700">83%</span>　<b style="color:var(--b)">转化率：</b><span style="color:var(--gn);font-weight:700">16%</span></p>
-</div>
-</div>
+<p><b style="color:var(--b)">需求：</b>AI电商创业实战，短视频带货、AI选品、店铺运营</p>
+<p><b style="color:var(--b)">特点：</b>学习意愿强，时间充裕，预算有限</p>
+<p><b style="color:var(--b)">投流渠道：</b>抖音+B站+小红书</p>
+<p><b style="color:var(--b)">完播率 83%</b> · <b style="color:var(--b)">转化率 16%</b></p>
+</div></div>
 <div class="cd" style="border-top:3px solid var(--pk)">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:28px">💼</span><div><div style="font-size:18px;font-weight:800">在职上班族</div><div style="font-size:13px;color:var(--pk);font-weight:600">25至40岁 · 占比 32%</div></div></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:28px">💼</span><div><div style="font-size:18px;font-weight:800">在职上班族</div><div style="font-size:13px;color:var(--pk);font-weight:600">25-40岁 · 占比 32%</div></div></div>
 <div style="font-size:15px;color:var(--g2);line-height:2">
-<p><b style="color:var(--b)">核心需求：</b>副业开网店，AI降低门槛，利用AI提升电商工作效率</p>
-<p><b style="color:var(--b)">特点：</b>付费能力强，时间碎片化，关注ROI与实操落地</p>
-<p><b style="color:var(--b)">投流策略：</b>副业+赚钱+职场焦虑标签，抖音+视频号+小红书</p>
-<p><b style="color:var(--b)">完播率：</b><span style="color:var(--gn);font-weight:700">69%</span>　<b style="color:var(--b)">转化率：</b><span style="color:var(--gn);font-weight:700">12.8%</span></p>
-</div>
-</div>
+<p><b style="color:var(--b)">需求：</b>副业开网店，AI降低门槛，提升电商效率</p>
+<p><b style="color:var(--b)">特点：</b>付费能力强，时间碎片化，关注ROI</p>
+<p><b style="color:var(--b)">投流渠道：</b>抖音+视频号+小红书</p>
+<p><b style="color:var(--b)">完播率 69%</b> · <b style="color:var(--b)">转化率 12.8%</b></p>
+</div></div>
 <div class="cd" style="border-top:3px solid var(--r)">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:28px">🔧</span><div><div style="font-size:18px;font-weight:800">电商从业人员</div><div style="font-size:13px;color:var(--r);font-weight:600">22至50岁 · 占比 22%</div></div></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span style="font-size:28px">🔧</span><div><div style="font-size:18px;font-weight:800">电商从业人员</div><div style="font-size:13px;color:var(--r);font-weight:600">22-50岁 · 占比 22%</div></div></div>
 <div style="font-size:15px;color:var(--g2);line-height:2">
-<p><b style="color:var(--b)">核心需求：</b>运营、美工、客服等从业者，用AI工具提升产能与竞争力</p>
-<p><b style="color:var(--b)">特点：</b>关注实战技能与效率提升，社群归属感强，乐于分享</p>
-<p><b style="color:var(--b)">投流策略：</b>电商运营+效率提升标签，抖音+B站+知乎</p>
-<p><b style="color:var(--b)">完播率：</b><span style="color:var(--gn);font-weight:700">74%</span>　<b style="color:var(--b)">转化率：</b><span style="color:var(--gn);font-weight:700">11.2%</span></p>
+<p><b style="color:var(--b)">需求：</b>运营/美工/客服从业者，用AI提升产能与竞争力</p>
+<p><b style="color:var(--b)">特点：</b>关注实战技能，社群归属感强</p>
+<p><b style="color:var(--b)">投流渠道：</b>抖音+B站+知乎</p>
+<p><b style="color:var(--b)">完播率 74%</b> · <b style="color:var(--b)">转化率 11.2%</b></p>
+</div></div>
 </div>
-</div>
-</div></div></section>
+</div></section>
 
-<!-- ===== 3: 投流方法 ===== -->
+<!-- ===== 3: 视频制作 ===== -->
 <section class="s" id="s3"><div class="w">
-<div class="sh rv"><div class="stag tg">METHOD</div><h2>投流方法论与操作体系</h2><p>2026年千川全面切换全域推广，AI接管流量分发，但计划搭建的底层能力仍是ROI的根基</p></div>
+<div class="sh rv"><div class="stag tg">PRODUCTION</div><h2>投流视频制作方法</h2><p>AIGC工具链实现批量化生产，单条成本降低90%，日产能提升25倍</p></div>
 
 <div class="g2 rv">
 <div class="cd">
-<div class="cdt"><span class="d" style="background:var(--o)"></span>投流三阶段节奏</div>
-<div style="font-size:16px;line-height:2.2">
-<p><b style="color:var(--o);font-size:18px">第一阶段：测试期（第1-2周）</b></p>
-<p style="color:var(--g2);margin-bottom:16px">▸ 预算：总预算的20%，每日¥300-500<br>▸ 目标：测试素材与人群定向<br>▸ 跑5-8条素材，重点关注CTR和CVR<br>▸ A/B测试不同钩子类型（焦虑/好奇/利益驱动）<br>▸ CTR低于1.5%的素材立即淘汰</p>
-<p><b style="color:var(--o);font-size:18px">第二阶段：放量期（第3-6周）</b></p>
-<p style="color:var(--g2);margin-bottom:16px">▸ 预算：总预算的50%，日预算¥800-1200<br>▸ 目标：规模化获客<br>▸ 放大高ROI素材预算<br>▸ 启动数字人直播投流，24小时不间断<br>▸ 搭建私域承接体系（企微+社群+试听课）</p>
-<p><b style="color:var(--o);font-size:18px">第三阶段：稳定期（第7-12周）</b></p>
-<p style="color:var(--g2)">▸ 预算：总预算的30%<br>▸ 目标：优化ROI，从1:3提升至1:5以上<br>▸ 降低出价，提升素材质量<br>▸ 按人群分层精细化投放<br>▸ 复制成功模型拓展新品类</p>
-</div>
-</div>
-<div class="cd">
-<div class="cdt"><span class="d" style="background:var(--bl)"></span>千川计划搭建核心要点</div>
-<div style="font-size:16px;line-height:2.2">
-<p><b style="color:var(--bl)">🔹 基础定向设置</b></p>
-<p style="color:var(--g2);margin-bottom:14px">▸ 地域：根据课程覆盖范围选择，本地推选同城<br>▸ 年龄：18-50岁为主，根据人群画像微调<br>▸ 性别：AI电商男女均可，不限即可<br>▸ 时段：早8-10点、午12-14点、晚20-23点</p>
-<p><b style="color:var(--bl)">🔹 人群定向策略</b></p>
-<p style="color:var(--g2);margin-bottom:14px">▸ 行为兴趣：电商运营、短视频创业、AI工具、开店<br>▸ 达人相似：关注电商培训类达人<br>▸ 人群包：自定义人群包+系统智能扩展<br>▸ DMP人群：巨量云图人群运营</p>
-<p><b style="color:var(--bl)">🔹 出价策略</b></p>
-<p style="color:var(--g2);margin-bottom:14px">▸ 教育行业OCPM出价：¥45-60/线索<br>▸ 控成本投放：设定目标成本，系统自动优化<br>▸ 放量投放：适合成熟素材，快速消耗预算<br>▸ 赔付机制：2026年千川赔付规则，卡点申领</p>
-<p><b style="color:var(--bl)">🔹 素材追投与一键起量</b></p>
-<p style="color:var(--g2)">▸ 素材追投：高CTR素材自动追加预算<br>▸ 一键起量：新计划冷启动，快速拉起权重<br>▸ 搜索抢首屏：品牌词+品类词+竞品词</p>
-</div>
-</div>
-</div>
-
-<div class="cd rv" style="margin-top:20px">
-<div class="cdt"><span class="d" style="background:var(--gn)"></span>自然流量 + 付费流量协同模型</div>
-<div style="font-size:16px;line-height:2.2">
-<p>优质IP账号自然流量占比可达40%以上，显著降低综合获客成本。<b>自然流量是地基，付费流量是杠杆。</b></p>
-<p style="margin-top:12px"><b style="color:var(--gn)">📌 协同策略：</b></p>
-<p>▸ <b>第一步：</b>先做内容矩阵积累自然流量，日更3-5条优质短视频<br>▸ <b>第二步：</b>DOU+加热高潜力自然内容（CTR>2%的素材）<br>▸ <b>第三步：</b>千川投流用于规模化突破，放大已验证的素材<br>▸ <b>第四步：</b>直播+短视频联动，直播间投流配合短视频引流<br>▸ <b>第五步：</b>私域承接，投流线索→企业微信→社群→试听→成交</p>
-</div>
-</div></div></section>
-
-<!-- ===== 4: 平台数据 ===== -->
-<section class="s" id="s4"><div class="w">
-<div class="sh rv"><div class="stag tp">PLATFORM</div><h2>六大主流平台投流数据</h2><p>巨量千川、磁力引擎、聚光平台、腾讯广告、视频号、淘宝直播核心指标全览</p></div>
-
-<div class="cd rv" style="margin-bottom:20px">
-<div class="cdt"><span class="d" style="background:var(--bl)"></span>2026年教育行业各平台投流成本基准</div>
-<div style="overflow-x:auto">
-<table class="tb">
-<thead><tr><th>指标</th><th>抖音千川</th><th>快手磁力</th><th>小红书聚光</th><th>腾讯广告</th><th>视频号</th><th>淘宝直播</th></tr></thead>
-<tbody>
-<tr><td style="font-weight:700">CPM（千次曝光）</td><td>¥15-25</td><td>¥12-20</td><td>¥20-35</td><td>¥10-18</td><td>¥12-22</td><td>¥18-30</td></tr>
-<tr><td style="font-weight:700">CPC（单次点击）</td><td>¥1.5-2.5</td><td>¥1.0-1.8</td><td>¥2.0-3.5</td><td>¥0.8-1.5</td><td>¥1.2-2.0</td><td>¥2.0-3.0</td></tr>
-<tr><td style="font-weight:700">线索成本（CPL）</td><td class="hl">¥45-80</td><td>¥35-65</td><td>¥60-120</td><td>¥40-70</td><td>¥50-90</td><td>¥60-100</td></tr>
-<tr><td style="font-weight:700">点击率（CTR）</td><td>1.5-2.5%</td><td>1.8-3.0%</td><td>2.0-4.0%</td><td>1.2-2.0%</td><td>1.5-2.5%</td><td>1.8-3.0%</td></tr>
-<tr><td style="font-weight:700">转化率（CVR）</td><td>3.5-6.0%</td><td>3.0-5.5%</td><td>2.5-4.5%</td><td>2.0-4.0%</td><td>3.0-5.0%</td><td>5.0-8.0%</td></tr>
-<tr><td style="font-weight:700">平均ROI</td><td class="gn">1:3.5</td><td>1:2.8</td><td>1:2.5</td><td>1:2.2</td><td>1:3.0</td><td>1:4.0</td></tr>
-<tr><td style="font-weight:700">起投门槛</td><td>¥300/天</td><td>¥200/天</td><td>¥500/天</td><td>¥300/天</td><td>¥200/天</td><td>¥500/天</td></tr>
-</tbody>
-</table>
-</div>
-</div>
-
-<div class="g3 rv">
-<div class="plat">
-<div class="ph"><div class="pi" style="background:#000">🎵</div><div><div class="pn">抖音千川</div><div class="pd">10亿月活 · 电商闭环成熟</div></div></div>
-<div class="pb">▸ 教育CPM：<b>¥15-25</b>　线索成本：<b>¥45-80</b><br>▸ 平均ROI：<b>1:3.5</b>（教育行业最高）<br>▸ 优势：流量大、算法精准、电商闭环<br>▸ 适合：规模化获客、直播投流<br>▸ 建议预算占比：<b>40%</b></div>
-<div class="pm"><div class="pmc"><div class="v" style="color:var(--o)">35%</div><div class="l">完播率</div></div><div class="pmc"><div class="v" style="color:var(--bl)">4.5%</div><div class="l">互动率</div></div><div class="pmc"><div class="v" style="color:var(--gn)">6.0%</div><div class="l">转化率</div></div></div>
-</div>
-<div class="plat">
-<div class="ph"><div class="pi" style="background:#ff3b30">📺</div><div><div class="pn">B站</div><div class="pd">3.4亿月活 · 学习属性强</div></div></div>
-<div class="pb">▸ 教育CPM：<b>¥12-20</b>　线索成本：<b>¥40-70</b><br>▸ 平均ROI：<b>1:3.0</b><br>▸ 优势：用户学习意愿强、完播率高<br>▸ 适合：深度教程、品牌建设<br>▸ 建议预算占比：<b>8%</b></div>
-<div class="pm"><div class="pmc"><div class="v" style="color:var(--o)">54%</div><div class="l">完播率</div></div><div class="pmc"><div class="v" style="color:var(--bl)">7.2%</div><div class="l">互动率</div></div><div class="pmc"><div class="v" style="color:var(--gn)">4.5%</div><div class="l">转化率</div></div></div>
-</div>
-<div class="plat">
-<div class="ph"><div class="pi" style="background:#ff375f">📕</div><div><div class="pn">小红书聚光</div><div class="pd">3亿月活 · 种草属性强</div></div></div>
-<div class="pb">▸ 教育CPM：<b>¥20-35</b>　线索成本：<b>¥60-120</b><br>▸ 平均ROI：<b>1:2.5</b><br>▸ 优势：信任感强、女性用户多<br>▸ 适合：种草笔记、学员证言<br>▸ 建议预算占比：<b>15%</b></div>
-<div class="pm"><div class="pmc"><div class="v" style="color:var(--o)">30%</div><div class="l">完播率</div></div><div class="pmc"><div class="v" style="color:var(--bl)">8.5%</div><div class="l">互动率</div></div><div class="pmc"><div class="v" style="color:var(--gn)">4.0%</div><div class="l">转化率</div></div></div>
-</div>
-<div class="plat">
-<div class="ph"><div class="pi" style="background:#07c160">💬</div><div><div class="pn">腾讯广告</div><div class="pd">微信生态 · 私域联动</div></div></div>
-<div class="pb">▸ 教育CPM：<b>¥10-18</b>　线索成本：<b>¥40-70</b><br>▸ 平均ROI：<b>1:2.2</b><br>▸ 优势：成本低、私域承接强<br>▸ 适合：私域引流、朋友圈广告<br>▸ 建议预算占比：<b>25%</b></div>
-<div class="pm"><div class="pmc"><div class="v" style="color:var(--o)">41%</div><div class="l">完播率</div></div><div class="pmc"><div class="v" style="color:var(--bl)">5.3%</div><div class="l">互动率</div></div><div class="pmc"><div class="v" style="color:var(--gn)">3.5%</div><div class="l">转化率</div></div></div>
-</div>
-<div class="plat">
-<div class="ph"><div class="pi" style="background:#ff6900">⚡</div><div><div class="pn">快手磁力</div><div class="pd">6亿月活 · 下沉市场</div></div></div>
-<div class="pb">▸ 教育CPM：<b>¥12-20</b>　线索成本：<b>¥35-65</b><br>▸ 平均ROI：<b>1:2.8</b><br>▸ 优势：成本低、下沉市场覆盖<br>▸ 适合：性价比获客、本地推广<br>▸ 建议预算占比：<b>12%</b></div>
-<div class="pm"><div class="pmc"><div class="v" style="color:var(--o)">22%</div><div class="l">完播率</div></div><div class="pmc"><div class="v" style="color:var(--bl)">3.8%</div><div class="l">互动率</div></div><div class="pmc"><div class="v" style="color:var(--gn)">3.0%</div><div class="l">转化率</div></div></div>
-</div>
-<div class="plat">
-<div class="ph"><div class="pi" style="background:#385cf0">🛒</div><div><div class="pn">淘宝直播</div><div class="pd">8亿用户 · 购买心智强</div></div></div>
-<div class="pb">▸ 教育CPM：<b>¥18-30</b>　线索成本：<b>¥60-100</b><br>▸ 平均ROI：<b>1:4.0</b>（转化率最高）<br>▸ 优势：购买心智强、转化率高<br>▸ 适合：课程直接成交、直播带课<br>▸ 建议预算占比：<b>视情况</b></div>
-<div class="pm"><div class="pmc"><div class="v" style="color:var(--o)">38%</div><div class="l">完播率</div></div><div class="pmc"><div class="v" style="color:var(--bl)">6.8%</div><div class="l">互动率</div></div><div class="pmc"><div class="v" style="color:var(--gn)">8.0%</div><div class="l">转化率</div></div></div>
-</div>
-</div></div></section>
-
-<!-- ===== 5: 运营操作手法 ===== -->
-<section class="s" id="s5"><div class="w">
-<div class="sh rv"><div class="stag tr">OPERATION</div><h2>运营操作手法与数据驱动</h2><p>建立全链路数据看板，每日复盘核心指标，用数据指导每一步决策</p></div>
-
-<div class="g2 rv">
-<div class="cd">
-<div class="cdt"><span class="d" style="background:var(--o)"></span>AI电商 vs 传统电商获客成本对比</div>
+<div class="cdt"><span class="d" style="background:var(--o)"></span>AI电商 vs 传统电商制作对比</div>
 <div style="margin-top:12px">
 <div class="cr"><div class="cl">单条视频成本</div><div class="cb"><div class="co" style="width:65%">传统 ¥200-500</div><div class="cn" style="width:20%">AI ¥20-50</div></div><div class="cs">↓ 90%</div></div>
 <div class="cr"><div class="cl">日均产出量</div><div class="cb"><div class="co" style="width:10%">1-2条</div><div class="cn" style="width:60%">20-50条</div></div><div class="cs">↑ 25倍</div></div>
@@ -323,52 +262,131 @@
 </div>
 </div>
 <div class="cd">
-<div class="cdt"><span class="d" style="background:var(--bl)"></span>每日数据复盘核心指标</div>
+<div class="cdt"><span class="d" style="background:var(--bl)"></span>AIGC工具链制作流程</div>
 <div style="font-size:16px;line-height:2.2">
-<p><b style="color:var(--r)">🔴 CTR低于1.5% → 优化封面和标题</b></p>
-<p style="color:var(--g2);margin-bottom:12px">封面图决定第一印象，标题决定点击欲望。用A/B测试找到最优组合</p>
-<p><b style="color:var(--o)">🟠 CVR低于3% → 优化落地页和钩子</b></p>
-<p style="color:var(--g2);margin-bottom:12px">落地页加载速度、内容相关性、CTA按钮位置都会影响转化</p>
-<p><b style="color:var(--bl)">🔵 CPL高于¥80 → 调整定向和出价</b></p>
-<p style="color:var(--g2);margin-bottom:12px">放宽定向范围、降低出价、优化素材质量可以有效降低线索成本</p>
-<p><b style="color:var(--gn)">🟢 ROI低于1:2 → 暂停计划重新测试</b></p>
-<p style="color:var(--g2)">ROI低于盈亏线时果断暂停，重新测试素材和人群组合</p>
+<p><b style="color:var(--bl)">第一步：AI生成脚本</b></p>
+<p style="color:var(--g2);margin-bottom:12px">输入产品/课程信息，ChatGPT/DeepSeek批量生成100条不同风格脚本</p>
+<p><b style="color:var(--bl)">第二步：AI生成视觉素材</b></p>
+<p style="color:var(--g2);margin-bottom:12px">Midjourney/SD生成产品图、场景图；Runway/可灵生成视频片段</p>
+<p><b style="color:var(--bl)">第三步：AI剪辑合成</b></p>
+<p style="color:var(--g2);margin-bottom:12px">剪映/CapCut批量合成，自动匹配字幕、BGM、转场</p>
+<p><b style="color:var(--bl)">第四步：数字人出镜</b></p>
+<p style="color:var(--g2)">HeyGen/硅基流动生成数字人口播，24小时直播，人力成本降70%</p>
 </div>
 </div>
 </div>
 
-<div class="rv" style="margin-top:20px">
-<div class="adv">
-<div class="adh"><span class="adi">🎬</span><span class="adt">素材迭代是核心竞争力</span></div>
-<div class="adb">2026年培训类CPM同比上涨47%，但优质素材ROI反而提升25%。<b>素材质量决定投流效率。</b><br><br>▸ 用AIGC批量产出素材，日均20-50条，成本降低90%<br>▸ 前3秒必须有强钩子（数据/反差/痛点），否则用户直接划走<br>▸ 每周淘汰末位30%素材，补充新素材，保持素材池活力<br>▸ 同一脚本制作3-5个不同版本，A/B测试最优组合后放量</div>
+<div class="g2 rv" style="margin-top:20px">
+<div class="cd">
+<div class="cdt"><span class="d" style="background:var(--gn)"></span>千川素材审核要点</div>
+<div style="font-size:16px;line-height:2.2">
+<p><b>必须避免：</b></p>
+<p style="color:var(--g2);margin-bottom:12px">▸ 虚假收入承诺（"保证月入10万"）<br>▸ 绝对化用语（"最好""第一""唯一"）<br>▸ 诱导性点击（与内容不符的封面）<br>▸ 未经授权的平台logo/截图</p>
+<p><b>推荐做法：</b></p>
+<p style="color:var(--g2)">▸ 使用真实学员案例+数据截图<br>▸ 用"平均""多数"替代绝对化表述<br>▸ 封面与内容高度一致<br>▸ 注明"效果因人而异"</p>
 </div>
-<div class="adv">
-<div class="adh"><span class="adi">🤖</span><span class="adt">AI工具全面提效降本</span></div>
-<div class="adb">AIGC素材占比已达42%，数字人直播占比22%。<b>不用AI就是落后。</b><br><br>▸ AI生成脚本：输入产品信息，自动生成100条不同风格脚本<br>▸ AI生成图片/视频：Midjourney、SD、Runway批量产出视觉素材<br>▸ 数字人直播：24小时不间断直播，人力成本降70%<br>▸ AI智能投放：系统自动优化出价、定向、素材匹配，ROI提升40%<br>▸ AI客服：秒级回复线索咨询，转化率提升25%</div>
 </div>
-<div class="adv">
-<div class="adh"><span class="adi">🎯</span><span class="adt">精准人群定向降低获客成本</span></div>
-<div class="adb">AI电商培训目标人群明确，<b>精准定向可降低30%获客成本。</b><br><br>▸ <b>核心人群：</b>电商从业者、副业上班族、创业新手<br>▸ <b>兴趣标签：</b>电商运营、短视频创业、AI工具、开店、选品<br>▸ <b>行为标签：</b>搜索过电商课程、关注电商达人、浏览过培训广告<br>▸ <b>人群包：</b>巨量云图自定义人群包+系统智能扩展<br>▸ <b>排除人群：</b>已购买学员、同行竞品、无效人群</div>
+<div class="cd">
+<div class="cdt"><span class="d" style="background:var(--p)"></span>数字人直播投流</div>
+<div style="font-size:16px;line-height:2.2">
+<p><b>核心优势：</b></p>
+<p style="color:var(--g2);margin-bottom:12px">▸ 24小时不间断直播，覆盖全时段流量<br>▸ 人力成本降低70%，单场成本¥50-100<br>▸ AI实时回复弹幕，互动率提升25%<br>▸ 可同时开多个直播间，覆盖不同人群</p>
+<p><b>适用场景：</b></p>
+<p style="color:var(--g2)">▸ 课程介绍与答疑直播<br>▸ AI工具实操演示<br>▸ 学员案例分享<br>▸ 限时福利活动</p>
 </div>
-<div class="adv">
-<div class="adh"><span class="adi">💰</span><span class="adt">私域承接体系决定最终转化</span></div>
-<div class="adb">私域线索转化率比公域高3倍，<b>必须搭建私域承接体系。</b><br><br>▸ <b>承接路径：</b>投流线索 → 企业微信 → 社群 → 试听课 → 正价课<br>▸ <b>响应速度：</b>AI秒级回复，5分钟内完成首次触达<br>▸ <b>转化周期：</b>7天内完成首触到转化闭环<br>▸ <b>社群运营：</b>每日干货分享+学员案例+限时福利<br>▸ <b>数据追踪：</b>每条线索来源可追溯，精准计算各渠道ROI</div>
 </div>
-</div></div></section>
+</div>
+</div></section>
 
-<!-- ===== 6: 落地方案 ===== -->
-<section class="s" id="s6"><div class="w">
-<div class="sh rv"><div class="stag tp">ACTION</div><h2>投流落地方案与预算分配</h2><p>月度预算¥32,000，预期获客700+线索，投资回报率1:7.9</p></div>
+<!-- ===== 4: 平台数据 ===== -->
+<section class="s" id="s4"><div class="w">
+<div class="sh rv"><div class="stag tp">PLATFORM</div><h2>六大主流平台投流数据</h2><p>2026年教育行业各平台投流核心指标基准，数据来自巨量引擎、QuestMobile、蝉妈妈</p></div>
+
+<div class="cd rv" style="margin-bottom:20px">
+<div class="cdt"><span class="d" style="background:var(--bl)"></span>各平台投流成本基准对比</div>
+<div style="overflow-x:auto">
+<table class="tb">
+<thead><tr><th>指标</th><th>抖音千川</th><th>快手磁力</th><th>小红书聚光</th><th>腾讯广告</th><th>视频号</th><th>淘宝直播</th></tr></thead>
+<tbody>
+<tr><td style="font-weight:700">CPM</td><td>¥15-25</td><td>¥12-20</td><td>¥20-35</td><td>¥10-18</td><td>¥12-22</td><td>¥18-30</td></tr>
+<tr><td style="font-weight:700">CPC</td><td>¥1.5-2.5</td><td>¥1.0-1.8</td><td>¥2.0-3.5</td><td>¥0.8-1.5</td><td>¥1.2-2.0</td><td>¥2.0-3.0</td></tr>
+<tr><td style="font-weight:700">线索成本</td><td class="hl">¥45-80</td><td>¥35-65</td><td>¥60-120</td><td>¥40-70</td><td>¥50-90</td><td>¥60-100</td></tr>
+<tr><td style="font-weight:700">CTR</td><td>1.5-2.5%</td><td>1.8-3.0%</td><td>2.0-4.0%</td><td>1.2-2.0%</td><td>1.5-2.5%</td><td>1.8-3.0%</td></tr>
+<tr><td style="font-weight:700">CVR</td><td>3.5-6.0%</td><td>3.0-5.5%</td><td>2.5-4.5%</td><td>2.0-4.0%</td><td>3.0-5.0%</td><td>5.0-8.0%</td></tr>
+<tr><td style="font-weight:700">ROI</td><td class="gn">1:3.5</td><td>1:2.8</td><td>1:2.5</td><td>1:2.2</td><td>1:3.0</td><td>1:4.0</td></tr>
+<tr><td style="font-weight:700">起投门槛</td><td>¥300/天</td><td>¥200/天</td><td>¥500/天</td><td>¥300/天</td><td>¥200/天</td><td>¥500/天</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="g3 rv">
+<div class="plat">
+<div class="ph"><div class="pi" style="background:#000">🎵</div><div><div class="pn">抖音千川</div><div class="pd">10亿月活 · 电商闭环成熟</div></div></div>
+<div class="pb">▸ 线索成本<b>¥45-80</b>，ROI<b>1:3.5</b>（教育行业最高）<br>▸ 流量大、算法精准、电商闭环<br>▸ 适合规模化获客、直播投流<br>▸ 建议预算占比<b>40%</b></div>
+<div class="pm"><div class="pmc"><div class="v" style="color:var(--o)">35%</div><div class="l">完播率</div></div><div class="pmc"><div class="v" style="color:var(--bl)">4.5%</div><div class="l">互动率</div></div><div class="pmc"><div class="v" style="color:var(--gn)">6.0%</div><div class="l">转化率</div></div></div>
+</div>
+<div class="plat">
+<div class="ph"><div class="pi" style="background:#ff3b30">📺</div><div><div class="pn">B站</div><div class="pd">3.4亿月活 · 学习属性强</div></div></div>
+<div class="pb">▸ 线索成本<b>¥40-70</b>，ROI<b>1:3.0</b><br>▸ 用户学习意愿强、完播率高<br>▸ 适合深度教程、品牌建设<br>▸ 建议预算占比<b>8%</b></div>
+<div class="pm"><div class="pmc"><div class="v" style="color:var(--o)">54%</div><div class="l">完播率</div></div><div class="pmc"><div class="v" style="color:var(--bl)">7.2%</div><div class="l">互动率</div></div><div class="pmc"><div class="v" style="color:var(--gn)">4.5%</div><div class="l">转化率</div></div></div>
+</div>
+<div class="plat">
+<div class="ph"><div class="pi" style="background:#ff375f">📕</div><div><div class="pn">小红书聚光</div><div class="pd">3亿月活 · 种草属性强</div></div></div>
+<div class="pb">▸ 线索成本<b>¥60-120</b>，ROI<b>1:2.5</b><br>▸ 信任感强、女性用户多<br>▸ 适合种草笔记、学员证言<br>▸ 建议预算占比<b>15%</b></div>
+<div class="pm"><div class="pmc"><div class="v" style="color:var(--o)">30%</div><div class="l">完播率</div></div><div class="pmc"><div class="v" style="color:var(--bl)">8.5%</div><div class="l">互动率</div></div><div class="pmc"><div class="v" style="color:var(--gn)">4.0%</div><div class="l">转化率</div></div></div>
+</div>
+<div class="plat">
+<div class="ph"><div class="pi" style="background:#07c160">💬</div><div><div class="pn">腾讯广告</div><div class="pd">微信生态 · 私域联动</div></div></div>
+<div class="pb">▸ 线索成本<b>¥40-70</b>，ROI<b>1:2.2</b><br>▸ 成本低、私域承接强<br>▸ 适合私域引流、朋友圈广告<br>▸ 建议预算占比<b>25%</b></div>
+<div class="pm"><div class="pmc"><div class="v" style="color:var(--o)">41%</div><div class="l">完播率</div></div><div class="pmc"><div class="v" style="color:var(--bl)">5.3%</div><div class="l">互动率</div></div><div class="pmc"><div class="v" style="color:var(--gn)">3.5%</div><div class="l">转化率</div></div></div>
+</div>
+<div class="plat">
+<div class="ph"><div class="pi" style="background:#ff6900">⚡</div><div><div class="pn">快手磁力</div><div class="pd">6亿月活 · 下沉市场</div></div></div>
+<div class="pb">▸ 线索成本<b>¥35-65</b>，ROI<b>1:2.8</b><br>▸ 成本低、下沉市场覆盖<br>▸ 适合性价比获客、本地推广<br>▸ 建议预算占比<b>12%</b></div>
+<div class="pm"><div class="pmc"><div class="v" style="color:var(--o)">22%</div><div class="l">完播率</div></div><div class="pmc"><div class="v" style="color:var(--bl)">3.8%</div><div class="l">互动率</div></div><div class="pmc"><div class="v" style="color:var(--gn)">3.0%</div><div class="l">转化率</div></div></div>
+</div>
+<div class="plat">
+<div class="ph"><div class="pi" style="background:#385cf0">🛒</div><div><div class="pn">淘宝直播</div><div class="pd">8亿用户 · 购买心智强</div></div></div>
+<div class="pb">▸ 线索成本<b>¥60-100</b>，ROI<b>1:4.0</b>（转化率最高）<br>▸ 购买心智强、转化率高<br>▸ 适合课程直接成交、直播带课<br>▸ 建议预算占比<b>视情况</b></div>
+<div class="pm"><div class="pmc"><div class="v" style="color:var(--o)">38%</div><div class="l">完播率</div></div><div class="pmc"><div class="v" style="color:var(--bl)">6.8%</div><div class="l">互动率</div></div><div class="pmc"><div class="v" style="color:var(--gn)">8.0%</div><div class="l">转化率</div></div></div>
+</div>
+</div>
+
+<div class="cd rv" style="margin-top:20px">
+<div class="cdt"><span class="d" style="background:var(--o)"></span>抖音千川 · 教育行业投放方式对比</div>
+<div style="overflow-x:auto">
+<table class="tb">
+<thead><tr><th>投放方式</th><th>CPM</th><th>CPC</th><th>线索成本</th><th>适用场景</th></tr></thead>
+<tbody>
+<tr><td style="font-weight:600">信息流广告</td><td>¥18-25</td><td>¥1.8-2.5</td><td>¥55-80</td><td>规模化获客</td></tr>
+<tr><td style="font-weight:600">DOU+加热</td><td>¥15-20</td><td>¥1.5-2.0</td><td>¥45-65</td><td>测试素材潜力</td></tr>
+<tr><td style="font-weight:600">本地推</td><td>¥20-30</td><td>¥2.0-3.0</td><td>¥50-75</td><td>本地教培机构</td></tr>
+<tr><td style="font-weight:600">直播投流</td><td>¥15-22</td><td>¥1.5-2.2</td><td>¥40-60</td><td>ROI最高，配合数字人</td></tr>
+<tr><td style="font-weight:600">搜索广告</td><td>—</td><td>¥2.5-4.0</td><td>¥60-100</td><td>精准需求拦截</td></tr>
+</tbody>
+</table>
+</div>
+<div class="ins" style="margin-top:16px">
+<div class="inst">💡 千川投放建议</div>
+<p>推荐「DOU+测试 + 信息流放量」组合。DOU+测试素材潜力（CTR>2%的素材），信息流规模化获客。直播投流ROI最高（1:4+），配合数字人24小时直播，线索成本可压至¥40以下。教育行业OCPM出价建议¥45-60/线索。</p>
+</div>
+</div>
+</div></section>
+
+<!-- ===== 5: 投流策略 ===== -->
+<section class="s" id="s5"><div class="w">
+<div class="sh rv"><div class="stag tp">STRATEGY</div><h2>投流策略与预算分配</h2><p>月度预算¥32,000，预期获客700+线索，投资回报率1:7.9</p></div>
 
 <div class="g2 rv">
 <div class="cd">
-<div class="cdt"><span class="d" style="background:var(--p)"></span>推荐预算分配方案（月度 ¥32,000）</div>
+<div class="cdt"><span class="d" style="background:var(--p)"></span>预算分配方案（月度 ¥32,000）</div>
 <div style="margin-top:16px">
-<div class="br"><div class="bl">抖音千川</div><div class="bt"><div class="bf" style="width:40%;background:var(--o)">40%  ¥12,800</div></div></div>
-<div class="br"><div class="bl">腾讯广告</div><div class="bt"><div class="bf" style="width:25%;background:var(--gn)">25%  ¥8,000</div></div></div>
-<div class="br"><div class="bl">小红书聚光</div><div class="bt"><div class="bf" style="width:15%;background:var(--pk)">15%  ¥4,800</div></div></div>
-<div class="br"><div class="bl">快手磁力</div><div class="bt"><div class="bf" style="width:12%;background:var(--p)">12%  ¥3,840</div></div></div>
-<div class="br"><div class="bl">B站/其他</div><div class="bt"><div class="bf" style="width:8%;background:var(--bl)">8%  ¥2,560</div></div></div>
+<div class="br"><div class="bl">抖音千川</div><div class="bt"><div class="bf" style="width:40%;background:var(--o)">40% · ¥12,800</div></div></div>
+<div class="br"><div class="bl">腾讯广告</div><div class="bt"><div class="bf" style="width:25%;background:var(--gn)">25% · ¥8,000</div></div></div>
+<div class="br"><div class="bl">小红书聚光</div><div class="bt"><div class="bf" style="width:15%;background:var(--pk)">15% · ¥4,800</div></div></div>
+<div class="br"><div class="bl">快手磁力</div><div class="bt"><div class="bf" style="width:12%;background:var(--p)">12% · ¥3,840</div></div></div>
+<div class="br"><div class="bl">B站/其他</div><div class="bt"><div class="bf" style="width:8%;background:var(--bl)">8% · ¥2,560</div></div></div>
 </div>
 <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--g4);display:flex;justify-content:space-between;align-items:center">
 <div style="font-size:16px;color:var(--g)">月度总预算</div>
@@ -380,27 +398,60 @@
 <div style="font-size:16px;line-height:2.2">
 <p style="font-size:18px;font-weight:700;color:var(--o);margin-bottom:16px">投流效率 = 素材质量 × 人群精准度 × 私域承接力 ÷ 获客成本</p>
 <p><b>关键动作：</b></p>
-<p>① 用AIGC批量产出高质量素材（日均20-50条）</p>
-<p>② 多平台组合投放（抖音40% + 腾讯25% + 小红书15%）</p>
-<p>③ 搭建私域承接体系（企微+社群+AI客服）</p>
-<p>④ 数据驱动持续优化（每日复盘CTR/CVR/CPL）</p>
+<p>① AIGC批量产出高质量素材（日均20-50条）</p>
+<p>② 多平台组合投放（抖音40%+腾讯25%+小红书15%）</p>
+<p>③ 私域承接体系（企微+社群+AI客服秒级回复）</p>
+<p>④ 每日复盘CTR/CVR/CPL，数据驱动优化</p>
 <p style="margin-top:16px;padding-top:16px;border-top:1px solid var(--g4)"><b>预期效果：</b></p>
-<p>月投入 ¥32,000 → 获客 700+ 线索 → 转化 126 单 → 月营收 ¥252,000+</p>
-<p style="font-size:24px;font-weight:900;color:var(--o);margin-top:8px">投资回报率 ROI: 1:7.9</p>
+<p>月投入¥32,000 → 获客700+线索 → 转化126单 → 月营收¥252,000+</p>
+<p style="font-size:24px;font-weight:900;color:var(--o);margin-top:8px">ROI: 1:7.9</p>
 </div>
 </div>
-</div></div></section>
+</div>
+
+<div class="rv" style="margin-top:20px">
+<div class="adv">
+<div class="adh"><span class="adi">📊</span><span class="adt">每日数据复盘指标</span></div>
+<div class="adb">
+<b style="color:var(--r)">CTR低于1.5%</b> → 优化封面和标题，A/B测试不同钩子<br>
+<b style="color:var(--o)">CVR低于3%</b> → 优化落地页和钩子，检查转化路径<br>
+<b style="color:var(--bl)">CPL高于¥80</b> → 调整定向和出价，放宽人群范围<br>
+<b style="color:var(--gn)">ROI低于1:2</b> → 暂停计划重新测试，更换素材与人群组合
+</div>
+</div>
+<div class="adv">
+<div class="adh"><span class="adi">🎯</span><span class="adt">精准人群定向策略</span></div>
+<div class="adb">
+<b>核心人群：</b>电商从业者、副业上班族、创业新手<br>
+<b>兴趣标签：</b>电商运营、短视频创业、AI工具、开店、选品<br>
+<b>行为标签：</b>搜索过电商课程、关注电商达人、浏览过培训广告<br>
+<b>人群包：</b>巨量云图自定义人群包+系统智能扩展<br>
+<b>排除人群：</b>已购买学员、同行竞品、无效人群
+</div>
+</div>
+<div class="adv">
+<div class="adh"><span class="adi">💰</span><span class="adt">私域承接转化路径</span></div>
+<div class="adb">
+<b>承接路径：</b>投流线索 → 企业微信 → 社群 → 试听课 → 正价课<br>
+<b>响应速度：</b>AI秒级回复，5分钟内完成首次触达<br>
+<b>转化周期：</b>7天内完成首触到转化闭环<br>
+<b>社群运营：</b>每日干货+学员案例+限时福利<br>
+<b>数据追踪：</b>每条线索来源可追溯，精准计算各渠道ROI
+</div>
+</div>
+</div>
+</div></section>
 
 <footer>
-<div class="br2">AI电商教培 · 短视频投流深度调研报告</div>
-<p>数据来源：巨量引擎《2026教育行业营销白皮书》、QuestMobile、蝉妈妈、千川学堂、行业调研报告 · 2026年7月</p>
-<p style="margin-top:6px;font-size:12px;color:#aaa">本报告数据基于行业基准与公开信息整理，实际投放效果因素材质量、人群定向、出价策略等因素而异</p>
+<div class="br2">AI电商教培 · 短视频投流调研报告</div>
+<p>数据来源：巨量引擎《2026教育行业营销白皮书》、QuestMobile、蝉妈妈、千川学堂 · 2026年7月</p>
+<p style="margin-top:6px;font-size:12px;color:#aaa">本报告数据基于行业基准与公开信息整理，实际效果因素材质量、人群定向、出价策略等因素而异</p>
 </footer>
 
 <script>
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.08});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
-const ss=document.querySelectorAll('.s'),na=document.querySelectorAll('.nav-l a');
+const ss=document.querySelectorAll('.s'),na=document.querySelectorAll('.nl a');
 window.addEventListener('scroll',()=>{let c='';ss.forEach(s=>{if(window.scrollY>=s.offsetTop-120)c=s.id});na.forEach(a=>a.classList.toggle('act',a.getAttribute('href')==='#'+c))});
 </script>
 </body>
